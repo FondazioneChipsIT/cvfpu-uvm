@@ -1,0 +1,6 @@
+- tool: xcelium
+  compile:
+    count_comp  : "9"
+    work_lib    : "work"
+    svlog_option: "+incdir+${PROJECT_DIR}/tests" 
+    svlog_source : "${PROJECT_DIR}/tests/fpu_test_pkg.sv" 

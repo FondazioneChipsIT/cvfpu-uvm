@@ -1,0 +1,6 @@
+- tool: xcelium
+  compile:
+    count_comp   : "5"
+    work_lib     : "work"
+    svlog_option : "+incdir+${PROJECT_DIR}" 
+    svlog_flist  : "${DV_UTILS_DIR}/uvm/Files.f"

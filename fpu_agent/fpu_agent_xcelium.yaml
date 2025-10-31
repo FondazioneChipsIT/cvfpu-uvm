@@ -1,0 +1,7 @@
+- tool: xcelium
+  compile:
+    count_comp   : "6"
+    work_lib     : "work"
+    svlog_option : "+incdir+${PROJECT_DIR}/fpu_agent" 
+    svlog_source : "${PROJECT_DIR}/fpu_agent/fpu_agent_pkg.sv
+                    ${PROJECT_DIR}/fpu_agent/fpu_if.sv" 

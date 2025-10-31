@@ -1,0 +1,6 @@
+- tool: xcelium
+  compile:
+    count_comp  : "7"
+    work_lib    : "work"
+    svlog_option: "+incdir+${PROJECT_DIR}/ref_model_csim/rtl" 
+    svlog_source : "${PROJECT_DIR}/ref_model_csim/rtl/fpu_refmodel_pkg.sv" 

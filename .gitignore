@@ -4,5 +4,6 @@
 *.d
 *.so
 *.o
+*.history
 transcript
 work/

@@ -2,7 +2,7 @@
   compile:
     count_comp   : "1"
     work_lib     : "work"
-    svlog_option : "-errormax 1 -nowarn UEXPSC -nowarn SPDUSD -nowarn NOINUF -nowarn FUNTSK +incdir+${PROJECT_DIR} -uvm"
+    svlog_option : "-64bit -errormax 1 -nowarn UEXPSC -nowarn SPDUSD -nowarn NOINUF -nowarn FUNTSK +incdir+${PROJECT_DIR} -uvm"
     svlog_source : "${PROJECT_DIR}/top/rtl/tb_top.sv"
     yaml_lists   : "${PROJECT_DIR}/fpu_common/fpu_common_xcelium.yaml
                     ${PROJECT_DIR}/simu/sim_verilog_xcelium.yaml
@@ -12,8 +12,8 @@
                     ${PROJECT_DIR}/ref_model_csim/fpu_refmodel_xcelium.yaml
                     ${PROJECT_DIR}/env/fpu_env_xcelium.yaml
                     ${PROJECT_DIR}/tests/fpu_test_xcelium.yaml "
-    elab_option  :  "-errormax 1 -timescale 1ns/1ps -nowarn CUVUKP +incdir+${PROJECT_DIR} -uvm"
+    elab_option  :  "-64bit -errormax 1 -timescale 1ns/1ps -nowarn CUVUKP +incdir+${PROJECT_DIR} -uvm"
     top_entity   :  "top"
   sim:
-    sim_option   : ""
+    sim_option   : "work.top:sv -reflib work -64bit -uvm -access +rwc -sv_lib ${PROJECT_DIR}/ref_model_csim/cpp/build/refmodel_csim_lib +NB_TXNS=10000 +TIMEOUT=30000000"
 

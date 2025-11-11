@@ -22,7 +22,7 @@ The repository is organised as follows:
 
 ## 4. Getting started
 ### 4.1 Environment Setup
-Before building or running the project, you must configure your environment variables. The testbench requires QuestaSim simulator, so ensure the `QUESTA_PATH` variable is set to your Questa installation directory.
+Before building or running the project, you must configure your environment variables. The testbench works with QuestaSim simulator, Xcelium and VCS so ensure the `QUESTA_PATH`, `XLM_PATH` or `VCS_PATH` variable is set to your installation directory.
 
 **tcsh**
 ```
@@ -37,8 +37,10 @@ We also provide two scripts to setup the project environment, source the one tha
 
 | Shell Type      | Command to Run         |
 | --------------- | -----------------------|
-| **csh/tcsh**    | `source setup_env.csh` |
-| **bash/zsh/sh** | `source setup_env.sh`  |
+| **csh/tcsh**    | `source setup_env.csh <tool>` |
+| **bash/zsh/sh** | `source setup_env.sh <tool>`  |
+
+where <tool> can be `questa`, `xcelium` or `vcs`.
 
 Some of the testbench utilities (compilation, simulation and regression scripts) use Python. Dependencies are listed in `requirements.txt`.
 
@@ -63,29 +65,28 @@ setenv MPFR_DIR <mpfr_dir_absolute_path>
 export GMP_DIR=<gmp_dir_absolute_path>
 export MPFR_DIR=<mpfr_dir_absolute_path>
 ```
-It is important to note that the reference model includes `dpiheader.h` file that is tool specific to QuestaSim.
 
 #### Compilation
 ```
 cd ./ref_model_csim/cpp/
-make
+make TOOL=<tool>
 ```
 
 ### 4.2. Build and run simulation 
 #### Compile testbench
 ```
 cd ${PROJECT_DIR}/simu/
-python3 ${SCRIPTS_DIR}/compile.py --yaml sim_questa.yaml
+python3 ${SCRIPTS_DIR}/compile.py --yaml sim_<tool>.yaml
 ```
 #### Run a test
 
-The number of transactions is set by the variable `+NB_TXNS` (passed as simulation option) in the `sim_questa.yaml` file. It is currently fixed to 10 000.
+The number of transactions is set by the variable `+NB_TXNS` (passed as simulation option) in the `sim_<tool>.yaml` file. It is currently fixed to 10 000.
 ```
-python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_questa.yaml --test_name <TEST_NAME> --seed <SEED> --debug <VERBOSITY>
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name <TEST_NAME> --seed <SEED> --debug <VERBOSITY>
 ```
 For example
 ```
-python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_questa.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW
 ```
 Simulation logs can be found in the `output/` folder.
 
@@ -102,7 +103,7 @@ fpu_random_test 20
 
 Check the `testplan` for more details on the available tests.
 ```
-python3 ${SCRIPTS_DIR}/run_reg.py --yaml reg_questa.yaml --nthreads 3 --reg_list fpu_reg_list
+python3 ${SCRIPTS_DIR}/run_reg.py --yaml reg_<tool>.yaml --nthreads 3 --reg_list fpu_reg_list
 ```
 Regression logs can be found in the `regression/` folder. To parse through them, run the following script which will return result of the tests with either PASS or FAIL.
 ```

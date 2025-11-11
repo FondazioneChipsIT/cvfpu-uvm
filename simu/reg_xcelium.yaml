@@ -15,5 +15,4 @@
     elab_option  :  "-64bit -errormax 1 -timescale 1ns/1ps -nowarn CUVUKP +incdir+${PROJECT_DIR} -uvm"
     top_entity   :  "top"
   sim:
-    sim_option   : "work.top:sv -reflib work -64bit -uvm -access +rwc -sv_lib ${PROJECT_DIR}/ref_model_csim/cpp/build/refmodel_csim_lib +NB_TXNS=10000 +TIMEOUT=30000000"
-
+    sim_option   : "work.top:sv -reflib work -64bit -uvm -sv_lib ${PROJECT_DIR}/ref_model_csim/cpp/build/refmodel_csim_lib +TIMEOUT=30000000"

@@ -51,8 +51,6 @@ else
     export PERL5LIB="${PROJECT_DIR}/scripts/perl5"
 fi
 
-echo "QUESTO E' IL PATH $PATH"
-
 # TOOLS
 case $1 in
     questa)

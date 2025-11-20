@@ -47,6 +47,7 @@ SEED,sv_seed ([0-9]+)
 EOT,Note: \$finish
 EOT,Note:.*\$finish
 EOT,Simulation complete
+EOT,V C S
 EOT,End time:.*Elapsed time
 ERROR,Fatal error
 ERROR,Unrecognized parameter name:

@@ -63,7 +63,8 @@ case $1 in
         ;;
     vcs)
         GEN_PATH=$VCS_PATH
-        PATH="${VCS_PATH}/bin:$PATH"
+        export VCS_HOME=$VCS_PATH
+        PATH="${VCS_HOME}/linux64/bin:$PATH"
         ;;
     *)
         echo "Invalid tool: $1"

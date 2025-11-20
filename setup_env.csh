@@ -67,7 +67,9 @@ switch ($1)
         breaksw
     case vcs:
         setenv GEN_PATH $VCS_PATH
-        setenv PATH "${VCS_PATH}/bin:${PATH}"
+        setenv VCS_HOME $VCS_PATH
+        setenv PATH "${VCS_HOME}/linux64/bin:${PATH}"
+
         breaksw
     default:
         echo "Invalid tool: $1"

@@ -226,6 +226,11 @@ Add the new test to the `fpu_test_pkg.sv` file.
 #### Step 4: Run the Test
 From the `simu/` directory, compile and run the simulation by following directions detailed in section [4.2](#42-known-limitations).
 
+As an example:
+```
+python3 ${SCRIPTS_DIR}/compile.py --yaml sim_xcelium.yaml
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_xcelium.yaml --test_name my_feature_test --seed 1 --debug UVM_LOW --dump 1
+```
 ---
 
 #### Step 5: Check Results
@@ -233,5 +238,5 @@ Review the log file `my_feature_test_1.log` located in the `output/` directory f
 
 Open the waveform file if needed to inspect DUT behavior.
 ```
-visualizer example.db
+python3 ${SCRIPTS_DIR}/post_proc.py --tool xcelium --db_file ./output/xlm_db/my_feature_test_1.shm 
 ```

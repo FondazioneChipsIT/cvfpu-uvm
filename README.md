@@ -80,7 +80,7 @@ python3 ${SCRIPTS_DIR}/compile.py --yaml sim_<tool>.yaml
 ```
 #### Run a test
 
-The number of transactions is set by the variable `+NB_TXNS` (passed as simulation option) in the `sim_<tool>.yaml` file. It is currently fixed to 10 000.
+The number of transactions is set by the variable `+NB_TXNS` (passed as simulation option) in the `sim_<tool>.yaml` file.
 ```
 python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name <TEST_NAME> --seed <SEED> --debug <VERBOSITY>
 ```
@@ -90,7 +90,8 @@ python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_questa.yaml --test_name fpu_random
 ```
 Simulation logs can be found in the `output/` folder.
 
-The test runs in batch mode automatically but it can be run also using the GUI of the used tool
+The test runs in batch mode automatically but it can be run also using the GUI of the used tool.
+
 For example
 ```
 python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_xcelium.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW --batch 0
@@ -98,7 +99,7 @@ python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_xcelium.yaml --test_name fpu_rando
 in this case the simulation will be managed by Simvision.
 
 It is also possible to create a post-simulation debug database with the --dump option and open the saved dataset with the GUI subsequently. It is useful especially in batch mode but it can be used also while running the simulation with the GUI
-For example
+
 ```
 python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW --dump 1
 ```

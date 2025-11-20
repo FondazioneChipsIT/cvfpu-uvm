@@ -86,9 +86,31 @@ python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name <TEST_NAME
 ```
 For example
 ```
-python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_questa.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW
 ```
 Simulation logs can be found in the `output/` folder.
+
+The test runs in batch mode automatically but it can be run also using the GUI of the used tool
+For example
+```
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_xcelium.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW --batch 0
+```
+in this case the simulation will be managed by Simvision.
+
+It is also possible to create a post-simulation debug database with the --dump option and open the saved dataset with the GUI subsequently. It is useful especially in batch mode but it can be used also while running the simulation with the GUI
+For example
+```
+python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW --dump 1
+```
+will create a database file in the `output/<tool>_db/` folder that can be used later by mean of the command:
+```
+python3 ${SCRIPTS_DIR}/post_proc.py --tool <tool> --db_file <db_file_path>
+```
+> **Note:**
+>If VCS is the selected tool, the `VERDI_HOME` path must be configured as an environment variable, for a bash shell:
+```
+export VERDI_HOME=/path/to/Verdi
+```
 
 #### Run a regression
 The regression suite is defined in the `simu/fpu_reg_list` file. Each line in this file specifies:
@@ -103,12 +125,13 @@ fpu_random_test 20
 
 Check the `testplan` for more details on the available tests.
 ```
-python3 ${SCRIPTS_DIR}/run_reg.py --yaml reg_<tool>.yaml --nthreads 3 --reg_list fpu_reg_list
+python3 ${SCRIPTS_DIR}/run_reg.py --yaml sim_<tool>.yaml --nthreads 3 --reg_list fpu_reg_list
 ```
 Regression logs can be found in the `regression/` folder. To parse through them, run the following script which will return result of the tests with either PASS or FAIL.
 ```
 scan_logs.pl -nowarn --pat ${PROJECT_DIR}/scripts/patterns/sim_patterns.pat --waiver ${PROJECT_DIR}/scripts/patterns/sim_waivers.pat regression/fpu_*_test_*.log
 ```
+The regression tests run automatically in batch mode and with the dump option enabled, so that the created database files can be found in `regression/<tool>_db/` folder and used by mean of the `post_proc` command 
 
 > **Note:**
 > Some regression failures may currently be expected because of known bugs in the DUT. These are being tracked, check [CVFPU Issues](https://github.com/openhwgroup/cvfpu/issues) section to confirm whether it is a known bug or a new issue that should be reported.

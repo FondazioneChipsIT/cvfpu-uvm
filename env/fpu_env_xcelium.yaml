@@ -1,6 +1,0 @@
-- tool: xcelium
-  compile:
-    count_comp  : "8"
-    work_lib    : "work"
-    svlog_option: "+incdir+${PROJECT_DIR}/env" 
-    svlog_source : "${PROJECT_DIR}/env/fpu_env_pkg.sv" 

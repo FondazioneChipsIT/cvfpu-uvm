@@ -27,10 +27,10 @@
 - tool: questa
   compile:
     work_lib     : "work"
-    filelist     : "${PROJECT_DIR}/simu/bender_script_questa.f"
+    filelist     : "${PROJECT_DIR}/simu/bender_filelist.f"
     comp_option  : "-sv +define+QUESTASIM +incdir+${PROJECT_DIR} -L $QUESTA_PATH/uvm-1.1d"
     elab_option  :  "-debug -designfile design.bin -access=rw+/. -64 -suppress 2583,13314 -lint=full -L $QUESTA_PATH/uvm-1.1d"
     top_entity   :  "top"
   sim:
-    sim_option   : "opt -t ps -64 +NB_TXNS=1000 +TIMEOUT=30000000 -sv_lib $PROJECT_DIR/ref_model_csim/cpp/build/refmodel_csim_lib"
+    sim_option   : "opt -t ps -64 +NB_TXNS=10000 +TIMEOUT=30000000 -sv_lib $PROJECT_DIR/ref_model_csim/cpp/build/refmodel_csim_lib"
 

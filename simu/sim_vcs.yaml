@@ -1,7 +1,7 @@
 - tool: vcs
   compile:
     work_lib    : "work"
-    filelist    : "${PROJECT_DIR}/simu/comp_filelist.f"
+    filelist    : "${PROJECT_DIR}/simu/bender_filelist.f"
     comp_option : "-sverilog -timescale=1ns/1ps -full64 -debug_access+r -kdb +define+VCS +incdir+${PROJECT_DIR} -ntb_opts uvm"
     top_entity  :  "top"
   sim:

@@ -8,3 +8,8 @@
 *.shm
 transcript
 work/
+simu/*.f
+simu/*.do
+simu/*.tcl
+.bender/
+Bender.lock

@@ -53,7 +53,8 @@ Build the shared library `refmodel_csim_lib.so` used in the UVM testbench via DP
 #### Dependencies
 The following dependencies need to be installed in the system:
 
-- **GMP** (GNU Multiple Precision Arithmetic Library)
+- **Bender** a dependency management tool for HW design projects. See https://github.com/pulp-platform/bender.git for information ans installation guide.
+- **GMP** (GNU Multiple Precision Arithmetic Library).
 - **MPFR** (Multiple Precision Floating-Point Reliable Library): Section [*2.1 How to Install*](https://www.mpfr.org/mpfr-current/mpfr.html) details the steps to follow to install the library, use preferably version **4.2.2**.
 
 Set GMP/MPFR directory path variables in the environment.
@@ -121,10 +122,10 @@ The regression suite is defined in the `simu/fpu_reg_list` file. Each line in th
 - **Test Name:** The UVM test class to run.
 - **Number of Runs:** How many times to run that test, each one has a different randomly generated seed
 
-Edit this file to decrease/increase the number of runs. Example of 20 runs/test:
+Edit this file to decrease/increase the number of runs. By default, 700 regression random tests are performed (there must be at least 2 lines in the file):
 ```
-fpu_single_op_test 20
-fpu_random_test 20
+fpu_random_test 350
+fpu_random_test 350
 ```
 
 Check the `testplan` for more details on the available tests.

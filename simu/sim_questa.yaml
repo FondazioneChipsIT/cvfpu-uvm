@@ -27,7 +27,7 @@
 - tool: questa
   compile:
     work_lib     : "work"
-    filelist     : "${PROJECT_DIR}/simu/comp_filelist.f"
+    filelist     : "${PROJECT_DIR}/simu/bender_script_questa.f"
     comp_option  : "-sv +define+QUESTASIM +incdir+${PROJECT_DIR} -L $QUESTA_PATH/uvm-1.1d"
     elab_option  :  "-debug -designfile design.bin -access=rw+/. -64 -suppress 2583,13314 -lint=full -L $QUESTA_PATH/uvm-1.1d"
     top_entity   :  "top"

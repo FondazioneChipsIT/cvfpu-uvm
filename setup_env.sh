@@ -37,9 +37,9 @@ echo -e "${C_TOP}>>>>>> Initializing Platform <<<<<<${C_RST}"
 # Update all git submodules
 ############################################################
 echo -e "${C_MSG}Update all git submodules${C_RST}"
-#git submodule init
-#git submodule sync
-#git submodule update --init --recursive
+git submodule init
+git submodule sync
+git submodule update --init --recursive
 
 
 ############################################################

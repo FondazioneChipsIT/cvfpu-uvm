@@ -4,8 +4,8 @@ package:
     - "Riccardo Giunti (riccardo.giunti@chips.it)"
 
 dependencies:
-  cva6        : { git: "https://github.com/FondazioneChipsIT/cva6.git", rev: rgiunti/add-bender}
-  core-v-verif: { git: "https://github.com/FondazioneChipsIT/core-v-verif.git", rev: rgiunti/add-bender}
+  cva6        : { git: "https://github.com/FondazioneChipsIT/cva6.git", rev: chips-it}
+  core-v-verif: { git: "https://github.com/FondazioneChipsIT/core-v-verif.git", rev: chips-it}
 
 sources:
   -

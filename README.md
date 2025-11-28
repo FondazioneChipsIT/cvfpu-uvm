@@ -136,7 +136,7 @@ Regression logs can be found in the `regression/` folder. To parse through them,
 ```
 scan_logs.pl -nowarn --pat ${PROJECT_DIR}/scripts/patterns/sim_patterns.pat --waiver ${PROJECT_DIR}/scripts/patterns/sim_waivers.pat regression/fpu_*_test_*.log
 ```
-The regression tests run automatically in batch mode and with the dump option enabled, so that the created database files can be found in `regression/<tool>_db/` folder and used by mean of the `post_proc` command 
+The regression tests run automatically in batch mode and with the dump option enabled, so that the created database files can be found in the `regression/<tool>_db/` folder and used by mean of the `post_proc` command 
 
 > **Note:**
 > Some regression failures may currently be expected because of known bugs in the DUT. These are being tracked, check [CVFPU Issues](https://github.com/openhwgroup/cvfpu/issues) section to confirm whether it is a known bug or a new issue that should be reported.

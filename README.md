@@ -102,7 +102,7 @@ python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_xcelium.yaml --test_name fpu_rando
 ```
 in this case the simulation will be managed by Simvision.
 
-It is also possible to create a post-simulation debug database with the --dump option and open the saved dataset with the GUI subsequently. It is useful especially in batch mode but it can be used also while running the simulation with the GUI
+It is also possible to create a post-simulation debug database with the `--dump` option and open the saved dataset with the GUI subsequently. It is useful especially in batch mode but it can be used also while running the simulation with the GUI
 
 ```
 python3 ${SCRIPTS_DIR}/run_test.py --yaml sim_<tool>.yaml --test_name fpu_random_test --seed 1 --debug UVM_LOW --dump 1

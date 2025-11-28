@@ -86,7 +86,7 @@ class fpu_txn extends uvm_sequence_item;
     rand fp_double_t    m_fp_double_operands [2]; // Double precision floating point operands
     rand fp_single_t    m_fp_single_operands [2]; // Single precision floating point operands
 
-    rand mant_cfg_e           m_fp_mant_cfg [2:0];  // Mantissa type of each floating point operand 
+    rand mant_cfg_e           m_fp_mant_cfg [2];  // Mantissa type of each floating point operand 
     rand int                       m_op_group_cfg; // Operation group 
     rand int_type_cfg_e            m_int_op_type;  // Type of integer operands
     rand logic [CVA6Cfg.XLEN-1:0]  m_int_operand;  // Interger operands

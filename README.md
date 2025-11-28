@@ -43,7 +43,7 @@ We also provide two scripts to setup the project environment, source the one tha
 where <tool> can be `questa`, `xcelium` or `vcs`.
 
 > **Note:**
-> In the first part of these scripts is performed a git update of the submodules. Check the correctness of the remote url in the .gitmodules file
+> The first part of these scripts performs a git update of the submodules. Check the correctness of the remote url in the `.gitmodules` file
 
 Some of the testbench utilities (compilation, simulation and regression scripts) use Python. Dependencies are listed in `requirements.txt`.
 

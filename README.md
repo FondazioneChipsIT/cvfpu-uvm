@@ -1,5 +1,14 @@
 # CVFPU UVM Testbench
 
+## Emulator Tender
+Detailed information about the prerequisites to execute the benchmarks for the emulator tender can be found [here](https://hackmd.io/@U4uKXvr_RZyd_F2gfOmzlg/rk-XoPrZ-l). The evaluation creteria for the emulator tender will be:
+- Execution speed with 0% waveforms logging
+- Execution speed with 100% waveforms logging
+- % of waveforms than can be logged for the benchmark (if not 100%)
+- Compilation time
+- Number of code lines changed in DUT
+- Number of code lines changed in testbench
+
 ## 1. Project Overview
 This repository contains a UVM Verification Environment for the [CVFPU](https://github.com/openhwgroup/cvfpu.git). DUT is the CVA6 wrapper of the floating-point unit.
 

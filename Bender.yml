@@ -5,7 +5,7 @@ package:
 
 dependencies:
   cva6        : { git: "https://github.com/FondazioneChipsIT/cva6.git", rev: fb59a6d} #branch chips-it
-  core-v-verif: { git: "https://github.com/FondazioneChipsIT/core-v-verif.git", rev: cebf701} #branch chips-it
+  core-v-verif: { git: "https://github.com/FondazioneChipsIT/core-v-verif.git", rev: 791573e} #branch chips-it
 
 sources:
   -

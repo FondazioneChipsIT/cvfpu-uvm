@@ -78,12 +78,29 @@ export PATH
 export SCRIPTS=$PROJECT_DIR/scripts
 export PATH="${SCRIPTS}:$PATH"
 
+
+
 ############################################################
 # Project-specific environment variables
 ############################################################
+echo -e "${C_MSG}Running bender update${C_RST}"
+bender update
+
 export TARGET_CFG="cv64a60ax"
-export CVA6_REPO_DIR="${PROJECT_DIR}/modules/cva6"
-export CORE_V_VERIF="${PROJECT_DIR}/modules/core-v-verif"
+
+if CVA6_REPO_DIR="$(bender path cva6 2>/dev/null)"; then
+    export CVA6_REPO_DIR
+else
+    echo "[ERROR]: unable to get path for cva6 via Bender"
+    exit 1
+fi
+
+if CORE_V_VERIF_PATH="$(bender path core-v-verif 2>/dev/null)"; then
+    export CORE_V_VERIF="$CORE_V_VERIF_PATH"
+else
+    echo "[ERROR]: unable to get path for core-v-verif via Bender"
+    exit 1
+fi
 export DV_UTILS_DIR="${CORE_V_VERIF}/lib/cv_dv_utils"
 export SCRIPTS_DIR="${DV_UTILS_DIR}/python/sim_cmd"
 

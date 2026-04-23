@@ -1,7 +1,7 @@
 # CVFPU UVM Testbench
 
 ## Emulator Tender
-Detailed information about the prerequisites to execute the benchmarks for the emulator tender can be found [here](https://hackmd.io/@U4uKXvr_RZyd_F2gfOmzlg/rk-XoPrZ-l). The evaluation creteria for the emulator tender will be:
+The evaluation creteria for the emulator tender will be:
 - Execution speed with 0% waveforms logging
 - Execution speed with 100% waveforms logging
 - % of waveforms than can be logged for the benchmark (if not 100%)
@@ -62,7 +62,7 @@ Build the shared library `refmodel_csim_lib.so` used in the UVM testbench via DP
 #### Dependencies
 The following dependencies need to be installed in the system:
 
-- **Bender** a dependency management tool for HW design projects. See https://github.com/pulp-platform/bender.git for information ans installation guide.
+- **Bender** a dependency management tool for HW design projects. See https://github.com/pulp-platform/bender.git for information and installation guide.
 - **GMP** (GNU Multiple Precision Arithmetic Library).
 - **MPFR** (Multiple Precision Floating-Point Reliable Library): Section [*2.1 How to Install*](https://www.mpfr.org/mpfr-current/mpfr.html) details the steps to follow to install the library, use preferably version **4.2.2**.
 
